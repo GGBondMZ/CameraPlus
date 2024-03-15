@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mz.mzocr">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取网络信息状态，如当前的网络连接是否有效 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 读取手机状态 phone group -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 往SDCard读写数据权限   storage group -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ocr"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ocr"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MZOCR">
+        <activity
+            android:name=".ScanTextActivity"
+            android:exported="false"
+            android:label="@string/scan_text_lable" />
+        <activity
+            android:name=".ScanActivity"
+            android:exported="false"
+            android:label="@string/scan_label" />
+        <activity
+            android:name=".TextActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OcrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
